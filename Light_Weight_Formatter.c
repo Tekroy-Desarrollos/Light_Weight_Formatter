@@ -9,9 +9,7 @@
  * 
  */
 
-#include "Light_Weigth_Formatter.h"
-
-uint8_t asl = 2;
+#include "Light_Weight_Formatter.h"
 
 void LW_Formatter_Init(Light_Weight_Formatter * formatter_instance){
     formatter_instance->elements = 0;
