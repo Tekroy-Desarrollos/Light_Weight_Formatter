@@ -15,6 +15,9 @@
 #include <stdint.h>
 #include <stdio.h>
 
+#ifdef __cplusplus
+extern "C" {
+#endif
 //****************************************
 #define LW_FORMATTER_BUFFER_SIZE 128
 typedef struct{
@@ -50,6 +53,22 @@ void LW_Formatter_Add_Variable_Interface(Light_Weight_Formatter * formatter_inst
  * @return uint8_t* 
  */
 uint8_t * LW_Formatter_Get_Buffer(Light_Weight_Formatter * formatter_instance);
+
+/**
+ * @brief Retorna numero de elementos (bytes) que se llevan guardados en el buffer
+ * 
+ * @param formatter_instance 
+ * @return uint8_t
+ */
+size_t LW_Formatter_Get_Elements(Light_Weight_Formatter * formatter_instance);
+
+/**
+ * @brief Escribe en el buffer desde el indice indicado, retorna el numero de elementos nuevos, se "eliminan" los que quedan fuera de rango
+ * 
+ * @param formatter_instance
+ * @return size_t
+ */
+size_t LW_Formatter_Add_Data_Starting_At_Index(Light_Weight_Formatter * formatter_instance, uint32_t index, uint8_t * base, size_t bytes_number);
 
 /**
  * @brief Prints the formatter data in human readable format
@@ -97,4 +116,8 @@ void LW_Formatter_Restart(Light_Weight_Formatter * lw_decoder);
 #define LW_Formatter_Add_Double(formatter, var) LW_Formatter_Add_Variable_Interface(formatter, (uint8_t *)&var, 8)
 #define LW_Formatter_Add_Str(formatter, var, size) LW_Formatter_Add_Variable_Interface(formatter, (uint8_t *)var, size)
 //#define LW_Formatter_Add_Array(formatter, var) LW_Formatter_Add_Variable(formatter, var)
+#ifdef __cplusplus
+}
+#endif
+
 #endif
