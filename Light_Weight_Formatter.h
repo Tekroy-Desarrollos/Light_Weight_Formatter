@@ -35,7 +35,7 @@ typedef struct{
  * 
  * @param formatter_instance 
  */
-void LW_Formatter_Init(Light_Weight_Formatter * formatter_instance);
+void LW_Formatter_Init(Light_Weight_Formatter * formatter_instance, uint8_t * buffer, size_t buffer_size);
 
 /**
  * @brief Interface for adding data to the formatter's buffer, Specialized by macros
