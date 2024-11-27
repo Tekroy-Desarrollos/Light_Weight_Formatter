@@ -19,9 +19,9 @@
 extern "C" {
 #endif
 //****************************************
-#define LW_FORMATTER_BUFFER_SIZE 128
 typedef struct{
-    uint8_t buffer[LW_FORMATTER_BUFFER_SIZE];
+    uint8_t * buffer;
+    size_t buffer_size;
     size_t elements;
 }Light_Weight_Formatter;
 /**

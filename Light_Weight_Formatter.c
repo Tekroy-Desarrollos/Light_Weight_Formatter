@@ -11,8 +11,10 @@
 
 #include "Light_Weight_Formatter.h"
 
-void LW_Formatter_Init(Light_Weight_Formatter * formatter_instance){
+void LW_Formatter_Init(Light_Weight_Formatter * formatter_instance, uint8_t * buffer, size_t buffer_size){
     formatter_instance->elements = 0;
+    formatter_instance->buffer = buffer;
+    formatter_instance->buffer_size = buffer_size;
 }
 
 size_t LW_Formatter_Get_Elements(Light_Weight_Formatter * formatter_instance){
