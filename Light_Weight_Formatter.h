@@ -102,6 +102,7 @@ void LW_Formatter_Restart(Light_Weight_Formatter * lw_decoder);
  */
 
 #define LW_Formatter_Add_Variable(formatter, var) LW_Formatter_Add_Variable_Interface(formatter, (uint8_t *)&var, sizeof(var))
+#define LW_Formatter_Add_From_Pointer_and_Size(formatter, var, size) LW_Formatter_Add_Variable_Interface(formatter, (uint8_t *)var, size)
 
 #define LW_Formatter_Add_1_Byte_Signed(formatter, var) LW_Formatter_Add_Variable_Interface(formatter, (uint8_t *)&var, 1)
 #define LW_Formatter_Add_1_Byte_Unsigned(formatter, var) LW_Formatter_Add_Variable_Interface(formatter, (uint8_t *)&var, 1)
